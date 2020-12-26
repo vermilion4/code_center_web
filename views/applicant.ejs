@@ -1,0 +1,42 @@
+<% title = 'TCC | Registration Page' %>
+
+<%- include('partials/header') %>
+
+
+<h3>Registered Students</h3>
+
+<script type="text/javascript">
+    function myFunc(){
+        let result = confirm('Do you want to delete?');
+        if(result){
+            alert('deleted');
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+</script>
+    <table class="center" border="1">
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Course</th>
+            <th>Registration Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr>
+            <% record.forEach(function(records){ %>
+                <td><%=records.firstName +' '+ records.lastName %></td>
+                <td><%=records.gender %></td>
+                <td><%=records.course %></td>
+                <td><%=records.dateRegistered %></td>
+                <td><a href="/edit/<%= records._id %>">Edit</a></td>
+                <td><a href="/delete/<%= records._id %>" onclick="return myFunc();">Delete</a></td>
+                
+        </tr>
+            <% }) %>
+    </table>
+
+<%- include('partials/footer') %>

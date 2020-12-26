@@ -1,0 +1,43 @@
+.container{
+    border: 1px solid magenta;
+    width: 85%;
+    margin: 10px auto;
+}
+
+.header{
+    border: 1px solid  rgb(1, 5, 54);
+    width: 100%;
+    background-color: rgb(1, 5, 54);
+    color: white;
+    text-align: center;
+}
+
+.content{
+    background-color: rgb(1, 5, 54);
+    color: white;
+}
+
+.course{
+    text-align: center;
+}
+ .course-img{
+     width: 150px;
+    height: 150px;
+    
+} 
+
+.registration{
+    background-color: rgb(1, 5, 54);
+    color:white;
+}
+
+.footer{
+    text-align: center;
+}
+
+.center{
+    color:white;
+    margin-left: auto;
+    margin-right: auto;
+}
+

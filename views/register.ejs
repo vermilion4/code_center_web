@@ -1,0 +1,60 @@
+<% title = 'TCC | Registration' %>
+
+<%- include('partials/header') %>
+
+   <div class="registration">
+<h3 style="text-align: center;">Registration Form</h3>
+<p>Please fill the form fields below</p>
+<form action="/register" method="post">
+ 
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">First and last name</span>
+  </div>
+  <input type="text" name='firstName' aria-label="First name" class="form-control">
+  <input type="text" name='lastName' aria-label="Last name" class="form-control">
+</div>
+   <p><b>Gender</b></p>
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" value='Male' name="gender" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">Male</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" value="Female" name="gender" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Female</label>
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1"><b>Email address</b></label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+</div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1"><b>Course</b></label>
+    <select name='course' class="form-control" id="exampleFormControlSelect1">
+      <% var programs = ['Web Development',
+                        'Java Programming',
+                        'UI/UX Design',
+                        'Mobile Development',
+                        'Data Science',
+                        'Front-end Development',
+                        'Graphics Design'];
+                        
+                        programs.forEach(function(program){
+                            %>
+                    <option value="<%= program %>"><%=program %></option>
+                      <% }) %>
+    </select>
+
+                  
+  </div>
+  
+  <button type="submit" class="btn btn-dark">Click to Register</button>
+  </form>
+
+  <a href="/applicant">View Applicant List</a>
+</div>
+
+
+
+<%- include('partials/footer') %>
